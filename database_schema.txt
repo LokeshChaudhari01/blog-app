@@ -1,0 +1,33 @@
++-------------------+
+|       User        |
++-------------------+
+| _id      : ObjectId
+| email    : String (Unique, Required)
+| password : String (Hashed, Required)
+| createdAt: Date
++-------------------+
+        |
+        | 1 : N
+        v
++-------------------+
+|       Post        |
++-------------------+
+| _id      : ObjectId
+| title    : String (Required)
+| content  : String (Required)
+| author   : ObjectId (Ref: User)
+| createdAt: Date
+| updatedAt: Date
++-------------------+
+        |
+        | 1 : N
+        v
++-------------------+
+|      Comment      |
++-------------------+
+| _id      : ObjectId
+| content  : String (Required)
+| author   : ObjectId (Ref: User)
+| post     : ObjectId (Ref: Post)
+| createdAt: Date
++-------------------+
