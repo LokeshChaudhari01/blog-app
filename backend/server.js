@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser');
 dotenv.config();
 
 const app = express();
+app.set('trust proxy', 1); // Trust first proxy (like Railway's load balancer) for secure cookies
 
 // Middleware
 app.use(express.json());
