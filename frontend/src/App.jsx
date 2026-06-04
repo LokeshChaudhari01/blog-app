@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import CreatePost from './pages/CreatePost';
+import PostDetail from './pages/PostDetail';
 import { AuthContext } from './context/AuthContext';
 
 // Protected Route Component
@@ -41,6 +42,14 @@ const App = () => {
             element={
               <ProtectedRoute>
                 <CreatePost />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/posts/:postId" 
+            element={
+              <ProtectedRoute>
+                <PostDetail />
               </ProtectedRoute>
             } 
           />

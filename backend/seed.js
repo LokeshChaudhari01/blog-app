@@ -52,6 +52,17 @@ const importData = async () => {
 
     console.log('Posts created:', posts.length);
 
+    const comments = await Comment.insertMany([
+      { content: 'Great article, thanks for sharing!', author: users[1]._id, post: posts[0]._id },
+      { content: 'I found this very helpful.', author: users[2]._id, post: posts[0]._id },
+      { content: 'Tailwind is indeed awesome.', author: users[0]._id, post: posts[1]._id },
+      { content: 'Can you write more about this?', author: users[3]._id, post: posts[1]._id },
+      { content: 'Aggregations saved my life last week!', author: users[0]._id, post: posts[2]._id },
+      { content: 'Looking forward to more RSC content.', author: users[1]._id, post: posts[3]._id },
+    ]);
+
+    console.log('Comments created:', comments.length);
+
     console.log('Data Imported successfully!');
     process.exit();
   } catch (error) {

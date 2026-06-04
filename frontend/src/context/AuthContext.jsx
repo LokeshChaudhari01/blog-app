@@ -9,8 +9,8 @@ export const AuthProvider = ({ children }) => {
 
   // Configure axios to send credentials (cookies)
   axios.defaults.withCredentials = true;
-  // Set base URL for API
-  axios.defaults.baseURL = 'http://localhost:5001/api';
+  // Set base URL for API (use environment variable if it exists, otherwise localhost)
+  axios.defaults.baseURL = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
 
   useEffect(() => {
     const checkUserLoggedIn = async () => {

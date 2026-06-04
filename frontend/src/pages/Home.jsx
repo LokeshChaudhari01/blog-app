@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <div className="main-content">
       <div className="page-header">
-        <h1 className="page-title">Latest Articles</h1>
+        <h1 className="page-title">Latest Posts</h1>
         <p className="text-muted">Discover insights, tutorials, and stories.</p>
       </div>
 
